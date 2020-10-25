@@ -14,7 +14,10 @@
         <activity android:name=".ui.roomData.AddRoomDataActivity" />
         <activity android:name=".ui.roomData.RoomDataActivity" />
         <activity android:name=".ui.sharedPref.SharedPrefActivity" />
-        <activity android:name=".ui.HomeActivity">
+        <activity android:name=".ui.ReciverActivity" />
+        <activity android:name=".ui.WithFragmentActivity" />
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

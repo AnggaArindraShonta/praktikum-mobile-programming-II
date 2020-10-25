@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".ui.HomeActivity">
 
     <Button
         android:id="@+id/btnToSharedPref"
@@ -33,5 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnToSharedPref"
         app:layout_constraintVertical_bias="0.594" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
