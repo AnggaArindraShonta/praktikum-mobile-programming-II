@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.praktikum.praktikum_mobile_programming_ll.R;
+import com.praktikum.praktikum_mobile_programming_ll.ui.auth.LoginActivity;
 import com.praktikum.praktikum_mobile_programming_ll.ui.roomData.RoomDataActivity;
 import com.praktikum.praktikum_mobile_programming_ll.ui.sharedPref.SharedPrefActivity;
 
@@ -20,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Button btnToShared =  findViewById(R.id.btnToSharedPref);
         Button btnToRoom =  findViewById(R.id.btnToRoomData);
-
+        Button btnLogin =  findViewById(R.id.btnLogin);
 
         btnToShared.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, RoomDataActivity.class);
+                startActivity(i);
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(i);
             }
         });
