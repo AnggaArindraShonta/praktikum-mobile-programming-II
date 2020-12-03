@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">praktikum-mobile-programming-ll</string>
+    <string name="tambah_data">tambah data</string>
+    <string name="hapus">Hapus</string>
+    <string name="button_to_sharedpref_and_roomdb">Button to Sharedpref and roomdb</string>
+    <string name="test_button">TEST BUTTON</string>
+    <string name="button_to_activity_with_fragment">Button to activity with fragment</string>
 </resources>

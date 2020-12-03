@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.model.Mahasiswa;
 import java.util.List;
@@ -24,5 +25,16 @@ public interface MahasiswaDao {
     @Delete
     public void deleteUsers(Mahasiswa... users);
 
+    @Query("SELECT * FROM mahasiswa WHERE id LIKE :mahasiswaId LIMIT 1")
+    Mahasiswa findById(int mahasiswaId);
+
+    @Update
+    void update(Mahasiswa mahasiswa);
+
+    @Insert
+    void insertData(Mahasiswa mahasiswa);
+
+    @Delete
+    void delete(Mahasiswa mahasiswa);
 }
 
