@@ -69,4 +69,3 @@ public class TambahDanUbahDataActivity extends AppCompatActivity implements View
     }
 
 }
-

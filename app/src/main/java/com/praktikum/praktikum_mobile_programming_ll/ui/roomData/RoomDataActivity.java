@@ -6,22 +6,13 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.praktikum.praktikum_mobile_programming_ll.R;
-import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.model.Mahasiswa;
-import com.praktikum.praktikum_mobile_programming_ll.ui.CrudRoomApp;
-import com.praktikum.praktikum_mobile_programming_ll.ui.activity.TambahDanUbahDataActivity;
+import com.praktikum.praktikum_mobile_programming_ll.ui.activity.MainActivity2;
 import com.praktikum.praktikum_mobile_programming_ll.ui.adapter.RvAdapter;
-import com.praktikum.praktikum_mobile_programming_ll.ui.common.DataListListener;
-
-import java.util.List;
 
 public class RoomDataActivity extends AppCompatActivity {
 
-    private RecyclerView rvListMahasiswa;
-    private FloatingActionButton fabTambah;
     private RvAdapter adapter;
 
     @Override
@@ -32,25 +23,7 @@ public class RoomDataActivity extends AppCompatActivity {
 
         Button btnTambah =  findViewById(R.id.btnTambah);
         Button btnLihat =  findViewById(R.id.btnlihat);
-
-        rvListMahasiswa = findViewById(R.id.rv_list_mahasiswa);
-        fabTambah = findViewById(R.id.fab_tambah_data);
-
-        rvListMahasiswa.setAdapter(adapter);
-
-        adapter.setRemoveListener(new DataListListener() {
-            @Override
-            public void onRemoveClick(Mahasiswa mahasiswa) {
-                adapter.removeData(mahasiswa);
-            }
-        });
-
-        fabTambah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RoomDataActivity.this, TambahDanUbahDataActivity.class));
-            }
-        });
+        Button btncrud = findViewById(R.id.btncrud);
 
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,14 +41,14 @@ public class RoomDataActivity extends AppCompatActivity {
             }
         });
 
+        btncrud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RoomDataActivity.this, MainActivity2.class);
+                startActivity(i);
+            }
+        });
+
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        List<Mahasiswa> datas = CrudRoomApp.getInstance()
-                .getDataBase()
-                .userDao().getAll();
-        adapter.setData(datas);
-    }
 }

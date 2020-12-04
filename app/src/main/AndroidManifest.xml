@@ -17,6 +17,7 @@
         <activity android:name=".ui.ReciverActivity" />
         <activity android:name=".ui.WithFragmentActivity" />
         <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.activity.MainActivity2"/>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
