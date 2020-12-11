@@ -22,11 +22,11 @@ public class SharedPrefManager {
         return sharedPreferences.getString("ini_string", "");
     }
     public String getUsername(){
-        return sharedPreferences.getString("sp_username", "rasyid298");
+        return sharedPreferences.getString("sp_username", "angga0423");
     }
 
     public String getPassword(){
-        return sharedPreferences.getString("sp_password", "123456");
+        return sharedPreferences.getString("sp_password", "0423");
     }
 
     public void saveIsLogin(Boolean value){
