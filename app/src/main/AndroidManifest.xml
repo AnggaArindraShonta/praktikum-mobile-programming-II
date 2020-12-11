@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.praktikum.praktikum_mobile_programming_ll">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:name=".ui.CrudRoomApp"
@@ -9,16 +15,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.Theme.Praktikummobileprogrammingll">
-        <activity android:name=".ui.roomData.ViewRoomDataActivity"></activity>
+        android:theme="@style/AppTheme.Theme.Praktikummobileprogrammingll"
+        android:requestLegacyExternalStorage="true"
+        tools:ignore="AllowBackup,UnusedAttribute">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".ui.roomData.ViewRoomDataActivity"/>
         <activity android:name=".ui.roomData.AddRoomDataActivity" />
         <activity android:name=".ui.roomData.RoomDataActivity" />
         <activity android:name=".ui.sharedPref.SharedPrefActivity" />
         <activity android:name=".ui.ReciverActivity" />
         <activity android:name=".ui.WithFragmentActivity" />
         <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.activity.MainActivity2"/>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity"/>
+        <activity
+            android:name=".ui.activity.MainActivity2"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

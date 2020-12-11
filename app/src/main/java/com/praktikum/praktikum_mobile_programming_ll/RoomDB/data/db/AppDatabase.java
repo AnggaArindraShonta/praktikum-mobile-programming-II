@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase;
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.dao.MahasiswaDao;
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.model.Mahasiswa;
 
-@Database(entities = {Mahasiswa.class}, version = 1)
+@Database(entities = {Mahasiswa.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract MahasiswaDao userDao();
 }

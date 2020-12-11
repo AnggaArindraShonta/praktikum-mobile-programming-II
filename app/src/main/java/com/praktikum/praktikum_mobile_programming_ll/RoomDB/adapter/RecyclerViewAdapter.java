@@ -18,7 +18,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<Mahasiswa> albumList;
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nama,nim,kejuruan,alamat;
+        TextView nama, nim, kejuruan, alamat;
         public MyViewHolder(View v) {
             super(v);
 

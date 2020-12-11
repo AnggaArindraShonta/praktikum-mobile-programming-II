@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.room.Room;
 
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.db.AppDatabase;
+import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.db.DataBaseMigrations;
 
 /**
  * Created on : 06/11/20
@@ -24,7 +25,9 @@ public class CrudRoomApp extends Application {
     public void onCreate() {
         super.onCreate();
         dataBase = Room.databaseBuilder(this, AppDatabase.class, "database_mahasiswa")
-                .allowMainThreadQueries().build();
+                .addMigrations(DataBaseMigrations.MIGRATION_1_TO_2)
+                .allowMainThreadQueries()
+                .build();
 
         INSTANCE = this;
     }
