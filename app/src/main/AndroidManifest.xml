@@ -13,39 +13,42 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Theme.Praktikummobileprogrammingll"
-        android:requestLegacyExternalStorage="true"
         tools:ignore="AllowBackup,UnusedAttribute">
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".ui.roomData.ViewRoomDataActivity"/>
+        <activity android:name=".ui.roomData.ViewRoomDataActivity" />
         <activity android:name=".ui.roomData.AddRoomDataActivity" />
         <activity android:name=".ui.roomData.RoomDataActivity" />
         <activity android:name=".ui.sharedPref.SharedPrefActivity" />
         <activity android:name=".ui.ReciverActivity" />
         <activity android:name=".ui.WithFragmentActivity" />
         <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.MainActivity"/>
         <activity
-            android:name=".ui.activity.MainActivity2"
+            android:name=".ui.MainActivity"
             android:launchMode="singleInstance">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.MainActivity2" />
         <activity android:name=".ui.activity.TambahDanUbahDataActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.ProfileActivity" />
     </application>
 
 </manifest>

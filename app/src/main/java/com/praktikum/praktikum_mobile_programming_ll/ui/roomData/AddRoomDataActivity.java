@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.praktikum.praktikum_mobile_programming_ll.R;
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.model.Mahasiswa;
+import com.praktikum.praktikum_mobile_programming_ll.ui.CrudRoomApp;
 
-import static com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.db.MyApp.db;
 
 public class AddRoomDataActivity extends AppCompatActivity {
 
@@ -50,7 +50,7 @@ public class AddRoomDataActivity extends AppCompatActivity {
             mahasiswa.setNama(etNama.getText().toString());
             mahasiswa.setNim(etNim.getText().toString());
             //Insert data in database
-            db.userDao().insertAll(mahasiswa);
+            CrudRoomApp.getInstance().getDataBase().userDao().insertAll(mahasiswa);
             startActivity(new Intent(AddRoomDataActivity.this,RoomDataActivity.class));
         }else {
             Toast.makeText(this, "Mohon masukkan dengan benar", Toast.LENGTH_SHORT).show();

@@ -6,12 +6,11 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
 import com.praktikum.praktikum_mobile_programming_ll.R;
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.adapter.RecyclerViewAdapter;
-import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.db.AppDatabase;
 import com.praktikum.praktikum_mobile_programming_ll.RoomDB.data.model.Mahasiswa;
+import com.praktikum.praktikum_mobile_programming_ll.ui.CrudRoomApp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +36,7 @@ public class ViewRoomDataActivity extends AppCompatActivity {
     }
 
     private void fetchDataFromRoom() {
-        db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class,"mahasiswa").allowMainThreadQueries().build();
+        db = CrudRoomApp.getInstance().getDataBase();
         listMahasiswas = db.userDao().getAll();
 
         //just checking data from db
