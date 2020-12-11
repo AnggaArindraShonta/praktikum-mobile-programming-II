@@ -22,4 +22,3 @@ public class SharedPrefManager {
         return sharedPreferences.getString("ini_string", "");
     }
 }
-
