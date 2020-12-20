@@ -2,7 +2,6 @@ package com.praktikum.praktikum_mobile_programming_ll.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +12,7 @@ import com.praktikum.praktikum_mobile_programming_ll.ui.sharedPref.SharedPrefAct
 
 public class HomeActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,29 +22,20 @@ public class HomeActivity extends AppCompatActivity {
         Button btnToRoom =  findViewById(R.id.btnToRoomData);
         Button btnLogin =  findViewById(R.id.btnLogin);
 
-        btnToShared.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, SharedPrefActivity.class);
-                startActivity(i);
-            }
+        btnToShared.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SharedPrefActivity.class);
+            startActivity(intent);
         });
 
-        btnToRoom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, RoomDataActivity.class);
-                startActivity(i);
-            }
+        btnToRoom.setOnClickListener(v -> {
+            Intent i = new Intent(HomeActivity.this, RoomDataActivity.class);
+            startActivity(i);
         });
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(i);
-            }
+        btnLogin.setOnClickListener(v -> {
+            Intent i = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(i);
         });
 
     }
