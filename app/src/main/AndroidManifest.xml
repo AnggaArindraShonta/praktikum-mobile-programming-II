@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".ui.CrudRoomApp"
@@ -18,6 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Theme.Praktikummobileprogrammingll"
         tools:ignore="AllowBackup,UnusedAttribute">
+        <activity android:name=".ui.activity.TambahUbahMatkulActivity"></activity>
+        <activity android:name=".ui.activity.ListMatkulActivity" />
+        <activity android:name=".ui.activity.ListMahasiswaActivity" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -38,15 +42,18 @@
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleInstance">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".service.TimerService" android:enabled="true" />
-        <activity android:name=".service.TimerServiceActivity"/>
+
+        <service
+            android:name=".service.TimerService"
+            android:enabled="true" />
+
+        <activity android:name=".service.TimerServiceActivity" />
         <activity android:name=".ui.activity.MainActivity2" />
         <activity android:name=".ui.activity.TambahDanUbahDataActivity" />
         <activity android:name=".ui.LoginActivity" />

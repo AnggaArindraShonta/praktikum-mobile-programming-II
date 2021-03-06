@@ -25,11 +25,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created on : 07/11/20
- * Author     : mmnuradityo
- * GitHub     : https://github.com/mmnuradityo
- */
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
     private List<Mahasiswa> dataList = new ArrayList<>();

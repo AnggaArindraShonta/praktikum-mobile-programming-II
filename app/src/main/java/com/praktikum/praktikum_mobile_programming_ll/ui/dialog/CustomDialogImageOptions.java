@@ -11,11 +11,6 @@ import androidx.annotation.NonNull;
 import com.praktikum.praktikum_mobile_programming_ll.R;
 import com.praktikum.praktikum_mobile_programming_ll.ui.common.DialogImageOptionsListener;
 
-/**
- * Created on : 27/11/20
- * Author     : mmnuradityo
- * GitHub     : https://github.com/mmnuradityo
- */
 public class CustomDialogImageOptions extends Dialog {
 
     private final DialogImageOptionsListener listener;
